@@ -1,0 +1,27 @@
+{% extends 'mvdm/base.html' %}
+{% block body %}
+
+<div class="flex justify-between">
+    <h1 class="ml-10 mt-10 font-bold text-2xl">🛒 Orders</h1>
+</div>
+<div class="flex justify-center">
+    
+        
+
+        <div class="flex flex-wrap m-5">
+            {% for order in orders %}
+            <div class="w-1/3">
+                <div class="shadow-lg p-5 m-5">
+                    <div class="font-bold">Customer Name: {{ order.customer_name }}</div>
+                    <div>Customer Email: {{ order.customer_email }}</div>
+                    <div>Product: {{ order.product.name }}</div>
+                    <div>Amount: {{ order.amount }}</div>
+                    <div>Has Paid: {% if order.has_paid %} Yes {% else %} No {% endif %}</div>
+                    <div>Created On: {{ order.created_on }}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'mvdm/base.html' %}
+{% block body %}
+<h1 class="text-2xl font-semibold mt-"> 🎁Add Products </h1>
+<div class="container py-5">
+<form method="post" class="bg-white shadow-md m-10 w-2/5 rounded px-8 pt-6 pb-8 mb-4 font-semibold" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-2" >
+                <label class="block text-sm font-bold mb-2" for="">Name</label>
+                <div class="shadow appearance-none border rounded py-2 px-3 mr-10" >{{ product_form.name }}</div>
+                <div></div>
+        </div>
+        <div class="mb-2" >
+                <label class="block text-sm font-bold mb-2" for="">Description</label>
+                <div class="shadow appearance-none border rounded py-2 px-3 mr-10">{{ product_form.description }}</div>
+        </div>
+        <div class="mb-2" >
+            <label class="block text-sm font-bold mb-2" for="">Price</label>
+            <div class="shadow appearance-none border rounded py-2 px-3 mr-10">{{ product_form.price }}</div>
+        </div>
+        <div class="mb-2" >
+            <label class="block text-sm font-bold mb-2" for="">Upload File</label>
+            <div class="shadow appearance-none border rounded py-2 px-3 mr-10">{{ product_form.file }}</div>
+        </div>
+
+
+        
+        <button class="text-white bg-green-500 px-5 py-2 rounded m-2" type="submit">Add</button>
+        
+</form>
+</div>
+{% endblock %}

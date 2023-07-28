@@ -1,0 +1,8 @@
+{% extends 'mvdm/base.html' %}
+{% block body %}
+
+<div class="flex flex-col justify-center items-center min-h-screen">
+    <h1 class="text-2xl font-semibold">You have been logged out Succesfully</h1>
+    <p><span><a class="text-indigo-500" href="{% url 'mvdm:login' %}">Click here</a> to log back in</span></p>
+</div>
+{% endblock %}
